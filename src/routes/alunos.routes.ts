@@ -4,6 +4,7 @@ import {
   criarAluno,
   buscarAluno,
   deletarAluno,
+  editarAluno,
 } from "../controllers/alunos.controller.js";
 
 const router = express.Router();
@@ -11,6 +12,7 @@ const router = express.Router();
 router.get("/", listarAlunos);
 router.get("/:id", buscarAluno);
 router.post("/", criarAluno);
+router.put("/:id", editarAluno);
 router.delete("/:id", deletarAluno);
 
 export default router;
