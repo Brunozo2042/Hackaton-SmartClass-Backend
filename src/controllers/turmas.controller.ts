@@ -1,6 +1,6 @@
 import supabase from "../db/supabase";
 import { Request, Response } from "express";
-import { Turma } from "../interfaces/index.js";
+import { Turma } from "../types/index";
 
 // GET /turmas
 export async function listarTurmas(req: Request, res: Response) {

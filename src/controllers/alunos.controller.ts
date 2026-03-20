@@ -1,6 +1,7 @@
 import supabase from "../db/supabase";
 import { Request, Response } from "express";
-import { Aluno } from "../interfaces/index.js";
+import { Aluno } from "../types/index";
+import { hashPassword } from "../utils/hash";
 
 // GET /alunos
 export async function listarAlunos(req: Request, res: Response) {
@@ -29,9 +30,11 @@ export async function criarAluno(req: Request, res: Response) {
       });
     }
 
+    const hashedPassword = await hashPassword(senha);
+
     const { data, error } = await supabase
       .from("alunos")
-      .insert([{ nome, email, ra, senha, turma_id }])
+      .insert([{ nome, email, ra, hashedPassword, turma_id }])
       .select();
 
     if (error) throw error;
