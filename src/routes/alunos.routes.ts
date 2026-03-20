@@ -5,7 +5,7 @@ import {
   buscarAluno,
   deletarAluno,
   editarAluno,
-} from "../controllers/alunos.controller.js";
+} from "../controllers/alunos.controller";
 
 const router = express.Router();
 

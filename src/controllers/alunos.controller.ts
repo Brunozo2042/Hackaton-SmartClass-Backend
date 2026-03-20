@@ -1,4 +1,4 @@
-import supabase from "../db/supabase.js";
+import supabase from "../db/supabase";
 import { Request, Response } from "express";
 import { Aluno } from "../interfaces/index.js";
 

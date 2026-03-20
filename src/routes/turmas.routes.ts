@@ -5,7 +5,7 @@ import {
   buscarTurma,
   editarTurma,
   deletarTurma,
-} from "../controllers/turmas.controller.js";
+} from "../controllers/turmas.controller";
 
 const router = express.Router();
 
