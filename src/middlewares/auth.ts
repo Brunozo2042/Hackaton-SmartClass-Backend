@@ -21,13 +21,13 @@ export function autenticarToken(
       throw new Error("JWT_SECRET não definido");
     }
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-
+    const decoded: IUserPayload = jwt.verify(token, process.env.JWT_SECRET) as IUserPayload;
+    
     // 🔒 Narrowing + validação forte
     if (
       typeof decoded !== "object" ||
       !decoded ||
-      typeof decoded.id !== "string" ||
+      typeof decoded.id !== "number" ||
       typeof decoded.email !== "string"
     ) {
       return res.status(403).json({ erro: "Token inválido" });

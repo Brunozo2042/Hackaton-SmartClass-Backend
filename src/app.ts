@@ -10,6 +10,10 @@ import logger from "./middlewares/logger";
 import authRoutes from "./auth/auth";
 import alunosRoutes from "./routes/alunos.routes";
 import turmasRoutes from "./routes/turmas.routes";
+import professoresRoutes from "./routes/professores.routes";
+import materiasRoutes from "./routes/materias.routes";
+import conteudosRoutes from "./routes/conteudos.routes";
+import eventosRoutes from "./routes/eventos.routes";
 
 dotenv.config({ quiet: true });
 
@@ -23,5 +27,9 @@ app.use("/auth", authRoutes);
 
 app.use("/alunos", autenticarToken, alunosRoutes);
 app.use("/turmas", autenticarToken, turmasRoutes);
+app.use("/professores", autenticarToken, professoresRoutes);
+app.use("/materias", autenticarToken, materiasRoutes);
+app.use("/conteudos", autenticarToken, conteudosRoutes);
+app.use("/eventos", autenticarToken, eventosRoutes);
 
 export default app;

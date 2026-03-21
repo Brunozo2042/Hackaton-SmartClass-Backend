@@ -50,7 +50,7 @@ router.post("/login", async (req, res) => {
       { id: data.id, email: data.email, tipo },
       process.env.JWT_SECRET!,
       {
-        expiresIn: "1h",
+        expiresIn: "24h",
       },
     );
 

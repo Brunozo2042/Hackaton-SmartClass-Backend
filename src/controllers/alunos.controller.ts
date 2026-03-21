@@ -34,7 +34,7 @@ export async function criarAluno(req: Request, res: Response) {
 
     const { data, error } = await supabase
       .from("alunos")
-      .insert([{ nome, email, ra, hashedPassword, turma_id }])
+      .insert([{ nome, email, ra, senha: hashedPassword, turma_id }])
       .select();
 
     if (error) throw error;
@@ -100,17 +100,20 @@ export async function deletarAluno(req: Request, res: Response) {
 export async function editarAluno(req: Request, res: Response) {
   try {
     const { id } = req.params;
-    const { nome, email, idade } = req.body;
+    const { nome, email, ra, senha, turma_id } = req.body;
 
-    if (!nome && !email && !idade) {
+    if (!nome && !email && !ra && !senha && !turma_id) {
       return res.status(400).json({
-        erro: "Pelo menos um campo (nome, email ou idade) deve ser fornecido para atualização",
+        erro: "Pelo menos um campo (nome, email, ra, senha ou turma) deve ser fornecido para atualização",
       });
     }
 
     const camposParaAtualizar: Partial<Aluno> = {};
     if (nome) camposParaAtualizar.nome = nome;
     if (email) camposParaAtualizar.email = email;
+    if (ra) camposParaAtualizar.ra = ra;
+    if (senha) camposParaAtualizar.senha = await hashPassword(senha);
+    if (turma_id) camposParaAtualizar.turma_id = turma_id;
 
     const { data, error } = await supabase
       .from("alunos")
