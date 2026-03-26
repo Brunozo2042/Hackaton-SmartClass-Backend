@@ -18,8 +18,12 @@
     "dotenv": "^17.3.1",
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
+<<<<<<< HEAD
+    "zod": "^4.3.6"
+=======
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1"
+>>>>>>> origin/main
   },
   "devDependencies": {
     "@types/bcrypt": "^6.0.0",
