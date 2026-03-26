@@ -6,11 +6,12 @@
 - Matérias (Bruno) ✅
 - Conteúdos (Bruno) Testar
 - Eventos (Bruno) Testar
-- Atividades (Tiago)
-- Alternativas (Tiago)
-- Questões (Tiago)
-- Respostas (Tiago)
-- atividade_resultados (Tiago)
+- Atividades (Tiago) ✅
+- Alternativas (Tiago) ✅
+- Dissertativas (Tiago) ✅
+- Questões (Tiago) ✅
+- Respostas (Tiago) ✅
+- atividade_resultados (Tiago) 
 
 ## Extras
 - Login (Bruno) ✅

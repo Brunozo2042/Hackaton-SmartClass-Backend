@@ -14,6 +14,9 @@ import professoresRoutes from "./routes/professores.routes";
 import materiasRoutes from "./routes/materias.routes";
 import conteudosRoutes from "./routes/conteudos.routes";
 import eventosRoutes from "./routes/eventos.routes";
+import atividadesRoutes from "./routes/atividades.routes";
+import questoesRoutes  from "./routes/questoes.routes";
+import respotasRoutes from './routes/respostas.routes';
 
 dotenv.config({ quiet: true });
 
@@ -31,5 +34,7 @@ app.use("/professores", autenticarToken, professoresRoutes);
 app.use("/materias", autenticarToken, materiasRoutes);
 app.use("/conteudos", autenticarToken, conteudosRoutes);
 app.use("/eventos", autenticarToken, eventosRoutes);
-
+app.use("/atividades", autenticarToken, atividadesRoutes);
+app.use("/questoes", autenticarToken, questoesRoutes);
+app.use("/respostas", autenticarToken, respotasRoutes);
 export default app;
