@@ -5,6 +5,7 @@ import {
   buscarAtividade,
   deletarAtividade,
   editarAtividades,
+
 } from "../controllers/atividades.controller";
 
 const router = express.Router();
@@ -12,7 +13,7 @@ const router = express.Router();
 router.get("/", listarAtividades);
 router.get("/:id", buscarAtividade);
 router.post("/", criarAtividade);
-router.put("/:id", editarAtividades);
 router.delete("/:id", deletarAtividade);
+router.put("/:id", editarAtividades);
 
 export default router;

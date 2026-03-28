@@ -1,3 +1,5 @@
+import { datetime } from "zod/v4/core/regexes.cjs";
+
 export interface Aluno {
   id?: number;
   nome: string;
@@ -80,4 +82,22 @@ export interface Questoes{
   valor: number;
   pontuacao: number;
   itens: Alternativa[]|Dissertativa[];
+}
+
+export interface AtividadeResultados {
+  id?: number;
+  atividade_id: number;
+  aluno_id: number;
+  nota: number;
+  corrected_at: string;
+  sent_at: string;
+}
+
+export interface Usuarios {
+  id: number;
+  nome: string;
+  email: string;
+  ra?: string;
+  turma_id?: number;
+  created_at: string;
 }
