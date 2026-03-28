@@ -1,6 +1,6 @@
 import supabase from "../db/supabase";
 import { Request, Response } from "express";
-import { Atividade, tipoAtividade } from "../types/index";
+import { Atividade, AtividadeResultados, tipoAtividade } from "../types/index";
  
 // GET /atividades
 export async function listarAtividades(req: Request, res: Response) {
@@ -149,3 +149,4 @@ export async function editarAtividades(req: Request, res: Response) {
     });
   }
 }
+
