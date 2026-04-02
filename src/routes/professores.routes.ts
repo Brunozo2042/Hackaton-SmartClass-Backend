@@ -22,7 +22,25 @@ import {
  *             schema:
  *               type: array
  *               items:
- *                 $ref: '#/components/schemas/Professor'
+ *                 type: object
+ *                 properties:
+ *                   id:
+ *                     type: integer
+ *                   nome:
+ *                     type: string
+ *                   email:
+ *                     type: string
+ *                   senha:
+ *                     type: string
+ *                   materias:
+ *                     type: array
+ *                     items:
+ *                       type: object
+ *                       properties:
+ *                         id:
+ *                           type: integer
+ *                         nome:
+ *                           type: string
  *       500:
  *         description: Erro ao listar professores
  *
@@ -35,10 +53,43 @@ import {
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/Professor'
+ *             type: object
+ *             properties:
+ *               nome:
+ *                 type: string
+ *               email:
+ *                 type: string
+ *               senha:
+ *                 type: string
+ *               materias:
+ *                 type: array
+ *                 items:
+ *                   type: integer
  *     responses:
  *       201:
  *         description: Professor criado com sucesso
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 id:
+ *                   type: integer
+ *                 nome:
+ *                   type: string
+ *                 email:
+ *                   type: string
+ *                 senha:
+ *                   type: string
+ *                 materias:
+ *                   type: array
+ *                   items:
+ *                     type: object
+ *                     properties:
+ *                       id:
+ *                         type: integer
+ *                       nome:
+ *                         type: string
  *       400:
  *         description: Dados obrigatórios ausentes
  *       500:
@@ -58,6 +109,28 @@ import {
  *     responses:
  *       200:
  *         description: Professor encontrado com sucesso
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 id:
+ *                   type: integer
+ *                 nome:
+ *                   type: string
+ *                 email:
+ *                   type: string
+ *                 senha:
+ *                   type: string
+ *                 materias:
+ *                   type: array
+ *                   items:
+ *                     type: object
+ *                     properties:
+ *                       id:
+ *                         type: integer
+ *                       nome:
+ *                         type: string
  *       404:
  *         description: Professor não encontrado
  *       500:
@@ -78,7 +151,18 @@ import {
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/Professor'
+ *             type: object
+ *             properties:
+ *               nome:
+ *                 type: string
+ *               email:
+ *                 type: string
+ *               senha:
+ *                 type: string
+ *               materias:
+ *                 type: array
+ *                 items:
+ *                   type: integer
  *     responses:
  *       200:
  *         description: Professor atualizado com sucesso

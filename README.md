@@ -4,8 +4,8 @@
 - Professores (Bruno) ✅
 - Turmas (Bruno) ✅
 - Matérias (Bruno) ✅
-- Conteúdos (Bruno) Testar
-- Eventos (Bruno) Testar
+- Conteúdos (Bruno) ✅
+- Eventos (Bruno) ✅
 - Atividades (Tiago) ✅
 - Alternativas (Tiago) ✅
 - Dissertativas (Tiago) ✅
@@ -15,3 +15,4 @@
 
 ## Extras
 - Login (Bruno) ✅
+- Dashboard (Bruno)

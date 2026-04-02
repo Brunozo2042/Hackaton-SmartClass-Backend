@@ -9,7 +9,7 @@ const swaggerDefinition = {
   },
   servers: [
     {
-      url: `${process.env.BASE_URL}:${process.env.PORT}`,
+      url: process.env.BASE_URL,
       description: 'Servidor local',
     },
   ],
@@ -106,6 +106,13 @@ const swaggerDefinition = {
           email: {
             type: 'string',
             description: 'E-mail do professor',
+          },
+          materias: {
+            type: 'array',
+            items: {
+              type: 'number',
+            },
+            description: 'Lista de matérias ministradas pelo professor',
           },
         },
         required: ['nome', 'email'],

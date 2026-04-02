@@ -1,4 +1,4 @@
-import { datetime } from "zod/v4/core/regexes.cjs";
+import { datetime } from 'zod/v4/core/regexes.cjs';
 
 export interface Aluno {
   id?: number;
@@ -19,6 +19,7 @@ export interface Professor {
   email: string;
   senha: string;
 }
+
 export interface Materia {
   id?: number;
   nome: string;
@@ -37,9 +38,9 @@ export interface Evento {
   data: string;
 }
 
-export enum tipoAtividade{
-  "Prova",
-  "Trabalho"
+export enum tipoAtividade {
+  'Prova',
+  'Trabalho',
 }
 
 export interface Atividade {
@@ -61,9 +62,9 @@ export interface Resposta {
   pontuacao: number;
 }
 
-export enum tipoQuestao{
-  "Dissertativa",
-  "Alternativa"
+export enum tipoQuestao {
+  'Dissertativa',
+  'Alternativa',
 }
 
 export interface Alternativa {
@@ -75,13 +76,13 @@ export interface Dissertativa {
   texto: string;
   correta: string;
 }
-export interface Questoes{
+export interface Questoes {
   atividade_id: number;
   tipo: tipoQuestao;
   enunciado: string;
   valor: number;
   pontuacao: number;
-  itens: Alternativa[]|Dissertativa[];
+  itens: Alternativa[] | Dissertativa[];
 }
 
 export interface AtividadeResultados {
