@@ -20,6 +20,7 @@ import atividadesRoutes from './routes/atividades.routes';
 import questoesRoutes from './routes/questoes.routes';
 import atividadesResultadoRoutes from './routes/atividade_resultados.routes';
 import usuariosRoutes from './routes/usuarios.routes';
+import dashboardRoutes from './routes/dashboard.routes';
 import swaggerOptions from './utils/swagger';
 
 dotenv.config({ quiet: true });
@@ -42,6 +43,7 @@ app.use('/atividades', autenticarToken, atividadesRoutes);
 app.use('/questoes', autenticarToken, questoesRoutes);
 app.use('/atividade-resultados', autenticarToken, atividadesResultadoRoutes);
 app.use('/usuarios', autenticarToken, usuariosRoutes);
+app.use('/dashboard', autenticarToken, dashboardRoutes);
 
 const swaggerSpec = swaggerJsdoc(swaggerOptions);
 
