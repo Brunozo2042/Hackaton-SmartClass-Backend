@@ -3,7 +3,13 @@ import { Request, Response } from "express";
 
 export async function listarConteudos(req: Request, res: Response) {
   try {
-    const { data, error } = await supabase.from("conteudos").select("*");
+    const { data, error } = await supabase
+      .from("conteudos")
+      .select(`
+        *,
+        materias:materia_id(nome),
+        professores:professor_id(nome, email)
+      `);
 
     if (error) throw error;
 
@@ -48,7 +54,11 @@ export async function buscarConteudo(req: Request, res: Response) {
 
     const { data, error } = await supabase
       .from("conteudos")
-      .select("*")
+      .select(`
+        *,
+        materias:materia_id(nome),
+        professores:professor_id(nome, email)
+      `)
       .eq("id", id)
       .single();
 
